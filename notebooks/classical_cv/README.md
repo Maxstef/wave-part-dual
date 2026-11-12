@@ -12,4 +12,13 @@ The first sequence will cover:
 5. patterns, handcrafted features, matching, and recognition.
 
 Notebooks in this directory use a local two-digit sequence such as
-`01_detection_pipeline.ipynb`.
+`01_color_detection_pipeline.ipynb`.
+
+## Possible follow-up experiments
+
+These are candidates, not promises or homework. We can return to whichever
+ones become interesting:
+
+- filter components by area, aspect ratio, density, and shape;
+- test a color-detection pipeline on real photographs under changing light;
+- implement erosion and dilation with NumPy and compare them with OpenCV.
