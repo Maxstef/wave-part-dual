@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Mac OS
+.DS_Store
+
+# learning references that should not be tracked in version control
+_references/
+
+# Local datasets and generated experiment artifacts
+data/
+outputs/
