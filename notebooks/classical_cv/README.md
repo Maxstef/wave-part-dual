@@ -11,6 +11,11 @@ The first sequence will cover:
 4. stereo vision, disparity, depth, and 3D reconstruction;
 5. patterns, handcrafted features, matching, and recognition.
 
+Current notebooks:
+
+- `01_color_detection_pipeline.ipynb` — color masks, morphology, and connected components;
+- `02_camera_laboratory.ipynb` — sensors, camera settings, shutter timing, intrinsics, distortion, and distance.
+
 Notebooks in this directory use a local two-digit sequence such as
 `01_color_detection_pipeline.ipynb`.
 
