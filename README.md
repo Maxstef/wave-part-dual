@@ -21,6 +21,21 @@ wave-part-dual/
 Notebook numbering is local to each topic. A future topic can therefore begin
 at `01` without negotiating with every notebook that has ever existed.
 
+Reusable code follows the same topic-first idea:
+
+```text
+src/wave_part_dual/
+└── classical_cv/
+    ├── masks.py          # Binary-mask measurements
+    ├── camera.py         # Sensor and capture simulations
+    ├── geometry.py       # Projection, distortion, rays, and distance
+    └── calibration.py    # Synthetic evidence and camera estimation
+```
+
+New topic packages should be added only when experiments produce code useful
+outside one notebook. Plotting that explains a particular lesson can stay next
+to that lesson; not every cheerful rectangle needs a permanent API.
+
 ## Environment setup
 
 The project targets CPython 3.12. Conda manages the local Python environment;
