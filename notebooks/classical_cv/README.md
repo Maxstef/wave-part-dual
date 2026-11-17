@@ -16,6 +16,7 @@ Current notebooks:
 - `01_color_detection_pipeline.ipynb` — color masks, morphology, and connected components;
 - `02_camera_laboratory.ipynb` — sensors, camera settings, shutter timing, intrinsics, distortion, and distance.
 - `03_coordinates_and_calibration.ipynb` — homogeneous coordinates, world-to-camera projection, pixel rays, tangential distortion, calibration, and pixel-to-ground geometry.
+- `04_stereo_depth_and_point_clouds.ipynb` — stereo correspondence, block matching, disparity, metric depth, point clouds, active infrared, and sparse feature matching.
 
 Notebooks in this directory use a local two-digit sequence such as
 `01_color_detection_pipeline.ipynb`.
