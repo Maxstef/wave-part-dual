@@ -28,4 +28,16 @@ ones become interesting:
 
 - filter components by area, aspect ratio, density, and shape;
 - test a color-detection pipeline on real photographs under changing light;
-- implement erosion and dilation with NumPy and compare them with OpenCV.
+- implement erosion and dilation with NumPy and compare them with OpenCV;
+- stress-test stereo matching with noise, brightness changes, vertical
+  misalignment, and occlusion;
+- compare `StereoBM` with `StereoSGBM`;
+- vary projected-dot density on a textureless surface and measure trusted
+  disparity coverage;
+- give depth-sensing technologies their own practice: compare active stereo,
+  structured light, time-of-flight cameras, and LiDAR without pretending they
+  are all the same kind of magic;
+- give keypoints and descriptors their own notebook: inspect how memorable spots
+  and binary fingerprints are created, matched, and occasionally fooled, then
+  enforce the rectified-stereo rule, estimate sparse depth, or use them for a
+  small practical task such as image alignment.
