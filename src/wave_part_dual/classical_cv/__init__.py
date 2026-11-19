@@ -12,12 +12,15 @@ from .geometry import (
     radial_distort,
 )
 from .masks import mask_iou
+from .stereo import depth_map_to_points, disparity_to_depth, sad_cost_curve
 
 __all__ = [
     "calibrate_camera",
     "compute_ground_points_from_pixels",
     "create_artificial_calibration_data",
     "distort_points",
+    "depth_map_to_points",
+    "disparity_to_depth",
     "estimate_distance_from_size",
     "look_at_world_to_camera",
     "make_ground_camera_geometry",
@@ -25,6 +28,7 @@ __all__ = [
     "project_points",
     "radial_distort",
     "rolling_shutter",
+    "sad_cost_curve",
     "sample_rggb",
     "simulate_camera",
 ]
