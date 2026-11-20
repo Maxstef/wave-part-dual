@@ -10,7 +10,8 @@ that look educational, interesting, or sufficiently suspicious.
 ```text
 wave-part-dual/
 ├── notebooks/             # Explorations grouped by topic
-│   └── classical_cv/      # Classical computer vision practice
+│   ├── classical_cv/      # Classical computer vision foundations
+│   └── object_tracking/   # Motion and tracking experiments
 ├── src/wave_part_dual/    # Reusable code extracted from experiments
 ├── tests/                 # Tests for reusable code
 ├── data/                  # Local datasets; not committed

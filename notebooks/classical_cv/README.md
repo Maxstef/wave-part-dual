@@ -3,13 +3,13 @@
 Practice based initially on the five reference groups under
 `_references/classic-cv/`, then extended wherever curiosity leads.
 
-The first sequence will cover:
+The first sequence covered:
 
 1. thresholding, masks, morphology, connected components, and bounding boxes;
 2. cameras, image acquisition, coordinates, and projection geometry;
 3. image formation and geometric transformations;
 4. stereo vision, disparity, depth, and 3D reconstruction;
-5. patterns, handcrafted features, matching, and recognition.
+5. smoothing, edges, line detection, Hough voting, least squares, and RANSAC.
 
 Current notebooks:
 
@@ -21,6 +21,31 @@ Current notebooks:
 
 Notebooks in this directory use a local two-digit sequence such as
 `01_color_detection_pipeline.ipynb`.
+
+## Next foundation practices
+
+The first five notebooks built intuition for pixels, masks, cameras, stereo,
+edges, and robust geometry. The next useful steps are:
+
+1. **Contours and shape analysis** — boundaries, area, perimeter, moments,
+   centroids, orientation, polygon approximation, and convex hulls.
+2. **Keypoints, descriptors, and geometric matching** — distinctive points,
+   ORB-style fingerprints, match filtering, homography, RANSAC, and a small
+   image-alignment or panorama experiment.
+
+Motion, optical flow, and tracking have grown suspiciously ambitious and now
+have their own plan under [`../object_tracking/`](../object_tracking/). Classical
+CV concepts remain their foundation; they simply no longer have to share a
+bedroom.
+
+Image pyramids and scale should follow when objects become unwilling to remain
+the same size. A visual frequency-domain practice can later connect smoothing,
+edges, spatial frequency, and periodic noise without turning into compulsory
+Fourier suffering.
+
+Whenever practical, these notebooks should gradually introduce real images.
+Synthetic scenes are excellent witnesses because they tell us the truth; real
+photographs provide shadows, clutter, reflections, and valuable complaints.
 
 ## Possible follow-up experiments
 
@@ -38,10 +63,8 @@ ones become interesting:
 - give depth-sensing technologies their own practice: compare active stereo,
   structured light, time-of-flight cameras, and LiDAR without pretending they
   are all the same kind of magic;
-- give keypoints and descriptors their own notebook: inspect how memorable spots
-  and binary fingerprints are created, matched, and occasionally fooled, then
-  enforce the rectified-stereo rule, estimate sparse depth, or use them for a
-  small practical task such as image alignment;
+- after the keypoints practice, enforce the rectified-stereo rule and estimate
+  sparse depth from reliable feature matches;
 - apply smoothing, edge detection, and Hough line detection to a simple
   photograph containing strong straight lines. The synthetic road has served
   bravely; reality may now submit its complaints in a separate notebook.
