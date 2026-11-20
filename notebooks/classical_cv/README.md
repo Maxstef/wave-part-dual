@@ -41,4 +41,7 @@ ones become interesting:
 - give keypoints and descriptors their own notebook: inspect how memorable spots
   and binary fingerprints are created, matched, and occasionally fooled, then
   enforce the rectified-stereo rule, estimate sparse depth, or use them for a
-  small practical task such as image alignment.
+  small practical task such as image alignment;
+- apply smoothing, edge detection, and Hough line detection to a simple
+  photograph containing strong straight lines. The synthetic road has served
+  bravely; reality may now submit its complaints in a separate notebook.
