@@ -12,6 +12,7 @@ from .geometry import (
     radial_distort,
 )
 from .masks import mask_iou
+from .lines import fit_line_ransac, hough_accumulator
 from .stereo import depth_map_to_points, disparity_to_depth, sad_cost_curve
 
 __all__ = [
@@ -22,6 +23,8 @@ __all__ = [
     "depth_map_to_points",
     "disparity_to_depth",
     "estimate_distance_from_size",
+    "fit_line_ransac",
+    "hough_accumulator",
     "look_at_world_to_camera",
     "make_ground_camera_geometry",
     "mask_iou",
