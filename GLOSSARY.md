@@ -15,15 +15,23 @@ marked explicitly because the letters were apparently running out.
 [AP](#ap--average-precision), [API](#api--application-programming-interface),
 [AR](#ar--autoregressive), [ARO](#aro--attribution-relation-and-order)
 
-**B:** [BC](#bc--behavioral-cloning), [BCE](#bce--binary-cross-entropy),
-[BOS](#bos--beginning-of-sequence), [BPTT](#bptt--backpropagation-through-time)
+**B:** [Baseline](#baseline), [Bayer pattern](#bayer-pattern),
+[BC](#bc--behavioral-cloning), [BCE](#bce--binary-cross-entropy),
+[BGR](#bgr--blue-green-red), [Block matching](#block-matching),
+[BOS](#bos--beginning-of-sequence), [Bounding box](#bounding-box),
+[BPTT](#bptt--backpropagation-through-time),
+[BRIEF](#brief--binary-robust-independent-elementary-features)
 
-**C:** [C3D](#c3d--3d-convolutional-network),
-[CAM](#cam--class-activation-map), [CFG](#cfg--classifier-free-guidance),
+**C:** [C3D](#c3d--3d-convolutional-network), [Calibration](#calibration),
+[CAM](#cam--class-activation-map), [Canny](#canny-edge-detector),
+[CFG](#cfg--classifier-free-guidance),
 [CIFAR-10](#cifar-10--canadian-institute-for-advanced-research-10),
 [CLIP](#clip--contrastive-languageimage-pre-training),
-[CLS](#cls--classification-token), [CNN](#cnn--convolutional-neural-network),
-[COCO](#coco--common-objects-in-context), [CoCa](#coca--contrastive-captioner),
+[Closing](#closing), [CLS](#cls--classification-token),
+[CNN](#cnn--convolutional-neural-network), [CoCa](#coca--contrastive-captioner),
+[COCO](#coco--common-objects-in-context),
+[Connected component](#connected-component),
+[Convolution](#convolution),
 [CPC](#cpc--contrastive-predictive-coding), [CPU](#cpu--central-processing-unit),
 [CREPE](#crepe--compositionality-evaluation-benchmark),
 [CUDA](#cuda--compute-unified-device-architecture),
@@ -31,79 +39,442 @@ marked explicitly because the letters were apparently running out.
 
 **D:** [DAgger](#dagger--dataset-aggregation),
 [DCGAN](#dcgan--deep-convolutional-generative-adversarial-network),
-[DETR](#detr--detection-transformer), [DINO](#dino--self-distillation-with-no-labels),
+[Demosaicing](#demosaicing), [Depth map](#depth-map),
+[Descriptor](#descriptor), [DETR](#detr--detection-transformer),
+[Diffraction](#diffraction), [Dilation](#dilation),
+[DINO](#dino--self-distillation-with-no-labels), [Disparity](#disparity),
 [DiT](#dit--diffusion-transformer), [DP](#dp--data-parallelism),
 [DQN](#dqn--deep-q-network)
 
 **E:** [ELBO](#elbo--evidence-lower-bound),
-[ELU](#elu--exponential-linear-unit), [EOS](#eos--end-of-sequence)
+[ELU](#elu--exponential-linear-unit), [EOS](#eos--end-of-sequence),
+[Erosion](#erosion), [Exposure](#exposure), [Extrinsics](#extrinsics)
 
-**F:** [FCN](#fcn--fully-convolutional-network),
+**F:** [FAST](#fast--features-from-accelerated-segment-test),
+[FCN](#fcn--fully-convolutional-network),
 [FFN](#ffn--feed-forward-network), [FID](#fid--fréchet-inception-distance),
-[FLOP](#flop--floating-point-operation), [FN](#fn--false-negative),
+[Field of view](#field-of-view-fov), [FLOP](#flop--floating-point-operation),
+[FN](#fn--false-negative), [Focal length](#focal-length), [Focus](#focus),
+[FOV](#field-of-view-fov),
 [FP](#fp--false-positive), [FP32](#fp32--32-bit-floating-point),
-[FPN](#fpn--feature-pyramid-network),
+[FPN](#fpn--feature-pyramid-network), [FPS](#fps--frames-per-second),
 [FSDP](#fsdp--fully-sharded-data-parallel)
 
-**G:** [GAN](#gan--generative-adversarial-network),
-[GAP](#gap--global-average-pooling), [GELU](#gelu--gaussian-error-linear-unit),
+**G:** [Gain](#gain), [GAN](#gan--generative-adversarial-network),
+[GAP](#gap--global-average-pooling), [Gaussian filter](#gaussian-filter),
+[GELU](#gelu--gaussian-error-linear-unit),
 [GPU](#gpu--graphics-processing-unit),
 [Grad-CAM](#grad-cam--gradient-weighted-class-activation-mapping),
 [GRU](#gru--gated-recurrent-unit)
 
-**H:** [HSDP](#hsdp--hybrid-sharded-data-parallel)
+**H:** [Homogeneous coordinates](#homogeneous-coordinates),
+[Hough transform](#hough-transform), [HSDP](#hsdp--hybrid-sharded-data-parallel),
+[HSV](#hsv--hue-saturation-value)
 
 **I:** [I3D](#i3d--inflated-3d-convnet),
 [InfoNCE](#infonce--information-noise-contrastive-estimation),
-[IoU](#iou--intersection-over-union), [IRL](#irl--inverse-reinforcement-learning)
+[Inlier](#inlier), [Intrinsics](#intrinsics), [IoU](#iou--intersection-over-union),
+[IR](#ir--infrared), [IRL](#irl--inverse-reinforcement-learning)
 
-**K:** [KL](#kl--kullbackleibler-divergence)
+**K:** [Kernel](#kernel), [Keypoint](#keypoint),
+[KL](#kl--kullbackleibler-divergence)
 
 **L:** [L1](#l1--l1-norm-or-regularization),
 [L2](#l2--l2-norm-or-regularization),
+[Least squares](#least-squares),
 [LLaVA](#llava--large-language-and-vision-assistant), [LM](#lm--language-model),
 [LSTM](#lstm--long-short-term-memory)
 
 **M:** [MAE](#mae--masked-autoencoder-or-mean-absolute-error),
-[mAP](#map--mean-average-precision), [MDP](#mdp--markov-decision-process),
+[mAP](#map--mean-average-precision), [Mask](#mask),
+[MDP](#mdp--markov-decision-process),
 [MFU](#mfu--model-flops-utilization), [MHA](#mha--multi-head-attention),
 [ML](#ml--machine-learning), [MLE](#mle--maximum-likelihood-estimation),
 [MLP](#mlp--multilayer-perceptron), [MoCo](#moco--momentum-contrast),
+[Morphology](#morphology),
 [MPC](#mpc--model-predictive-control), [MSE](#mse--mean-squared-error)
 
 **N:** [NCHW](#nchw--batch-channel-height-width),
 [NeRF](#nerf--neural-radiance-field), [NHWC](#nhwc--batch-height-width-channel),
 [NLL](#nll--negative-log-likelihood), [NMS](#nms--non-maximum-suppression)
 
+**O:** [Opening](#opening),
+[ORB](#orb--oriented-fast-and-rotated-brief)
+
 **P:** [PAD](#pad--padding-token), [PE](#pe--positional-encoding),
-[PP](#pp--pipeline-parallelism), [PQ](#pq--panoptic-quality)
+[Pinhole model](#pinhole-camera-model), [Point cloud](#point-cloud),
+[PP](#pp--pipeline-parallelism), [PQ](#pq--panoptic-quality),
+[Principal point](#principal-point)
 
 **Q:** [QKV](#qkv--query-key-value)
 
 **R:** [R-CNN](#r-cnn--region-based-convolutional-neural-network),
-[ReLU](#relu--rectified-linear-unit), [RGB](#rgb--red-green-blue),
-[ResNet](#resnet--residual-network), [RL](#rl--reinforcement-learning),
+[Radial distortion](#radial-distortion),
+[RANSAC](#ransac--random-sample-consensus),
+[Rectification](#rectification),
+[ReLU](#relu--rectified-linear-unit),
+[Reprojection error](#reprojection-error), [Residual](#residual),
+[ResNet](#resnet--residual-network), [RGB](#rgb--red-green-blue),
+[RGGB](#rggb--red-green-green-blue), [RL](#rl--reinforcement-learning),
 [RMSE](#rmse--root-mean-squared-error),
 [RNN](#rnn--recurrent-neural-network), [RoI](#roi--region-of-interest),
-[RPN](#rpn--region-proposal-network), [RQ](#rq--recognition-quality)
+[Rolling shutter](#rolling-shutter), [RPN](#rpn--region-proposal-network),
+[RQ](#rq--recognition-quality)
 
-**S:** [SDF](#sdf--signed-distance-function), [SGD](#sgd--stochastic-gradient-descent),
+**S:** [SAD](#sad--sum-of-absolute-differences),
+[SAM](#sam--segment-anything-model), [Saturation](#saturation),
+[SDF](#sdf--signed-distance-function), [SGD](#sgd--stochastic-gradient-descent),
 [SiLU](#silu--sigmoid-linear-unit),
 [SimCLR](#simclr--simple-framework-for-contrastive-learning-of-visual-representations),
-[SAM](#sam--segment-anything-model), [SQ](#sq--segmentation-quality),
+[Sobel](#sobel-filter),
+[SQ](#sq--segmentation-quality),
 [SSD](#ssd--single-shot-multibox-detector),
-[SSL](#ssl--self-supervised-learning), [SVM](#svm--support-vector-machine)
+[SSL](#ssl--self-supervised-learning),
+[StereoBM](#stereobm--stereo-block-matching),
+[StereoSGBM](#stereosgbm--stereo-semi-global-block-matching),
+[Structuring element](#structuring-element), [SVM](#svm--support-vector-machine)
 
-**T:** [THW](#thw--time-height-width), [TP](#tp--true-positive-or-tensor-parallelism),
+**T:** [Tangential distortion](#tangential-distortion), [Texture](#texture),
+[Thresholding](#thresholding), [THW](#thw--time-height-width),
+[TP](#tp--true-positive-or-tensor-parallelism),
 [TPU](#tpu--tensor-processing-unit)
 
 **V:** [VAE](#vae--variational-autoencoder), [VGG](#vgg--visual-geometry-group),
 [ViT](#vit--vision-transformer), [VLA](#vla--vision-language-action),
 [VLM](#vlm--vision-language-model), [VQ](#vq--vector-quantization)
 
+**W:** [White balance](#white-balance)
+
 **X:** [XLA](#xla--accelerated-linear-algebra)
 
 **Y:** [YOLO](#yolo--you-only-look-once)
+
+## Classical CV: images, color, masks, and morphology
+
+Representative source: [Notebook 01 — color detection pipeline](notebooks/classical_cv/01_color_detection_pipeline.ipynb).
+
+### BGR — Blue, Green, Red
+
+OpenCV's traditional channel order for ordinary color images. Displaying BGR
+as RGB swaps red and blue, which can make a tomato reconsider its identity.
+
+### Closing
+
+A morphology operation consisting of dilation followed by erosion. It fills
+small holes and joins narrow breaks while roughly preserving object size.
+
+### Connected component
+
+A group of foreground pixels joined according to a chosen connectivity rule.
+Connected-component analysis turns a mask into separate candidate objects.
+
+### Dilation
+
+A morphology operation that grows foreground regions. It can close small gaps,
+connect nearby regions, and enlarge noise with equal professional commitment.
+
+### Erosion
+
+A morphology operation that shrinks foreground regions. It removes small
+foreground noise but can also erase thin or small objects.
+
+### HSV — Hue, Saturation, Value
+
+A color representation separating color type, colorfulness, and brightness.
+It often supports more intuitive color thresholds than raw RGB channels.
+
+### Kernel
+
+A small grid moved across an image or mask. Its values or shape determine which
+neighbors influence filtering and morphology.
+
+### Mask
+
+An image marking which pixels belong to a selected region. A binary mask
+usually uses foreground and background values such as `255` and `0`.
+
+### Morphology
+
+Shape-based processing of binary masks using a structuring element. In this
+context it means reshaping pixel regions, not examining the anatomy of frogs.
+
+### Opening
+
+A morphology operation consisting of erosion followed by dilation. It is useful
+for removing small foreground islands while keeping larger objects.
+
+### Saturation
+
+In color, saturation describes vividness versus grayness. For a sensor value,
+“saturated” can instead mean the measurement reached its maximum and clipped;
+same word, separate inconvenience.
+
+### Structuring element
+
+The small shape used to probe a mask during morphology. A rectangle, ellipse,
+or cross changes which neighboring pixels count as connected support.
+
+### Thresholding
+
+Converting continuous pixel values into categories using one or more limits.
+It commonly produces the binary mask used by later operations.
+
+## Classical CV: cameras and image formation
+
+Representative source: [Notebook 02 — camera laboratory](notebooks/classical_cv/02_camera_laboratory.ipynb).
+
+### Bayer pattern
+
+A repeating mosaic of color filters placed over camera sensor locations so
+each location measures only one color channel.
+
+### Demosaicing
+
+Estimating the missing color channels at every Bayer sensor location to create
+a full-color image. The demon is mostly interpolation wearing an alarming name.
+
+### Diffraction
+
+The spreading of light as it passes through an opening. A very small aperture
+can therefore blur detail before the sensor has any chance to record it.
+
+### Exposure
+
+How much light is collected, strongly influenced by exposure time. Longer
+exposure brightens an image but can turn motion into blur.
+
+### Field of view (FOV)
+
+The angular extent of the world visible through a camera. A wider FOV sees more
+of the scene; a narrower FOV magnifies a smaller region.
+
+### Focal length
+
+A camera parameter controlling projection scale and field of view. In camera
+matrices it is commonly measured in pixels as `fx` and `fy`.
+
+### Focus
+
+The distance range that appears sharp. Poor focus destroys spatial detail and
+cannot be repaired merely by adding more pixels.
+
+### FPS — Frames Per Second
+
+How many frames a camera captures or a system processes each second. Resolution
+and FPS compete for bandwidth and computation.
+
+### Gain
+
+Amplification applied to a sensor measurement. It brightens the signal and the
+noise, because gain has no moral framework for distinguishing them.
+
+### Pinhole camera model
+
+An idealized camera in which rays pass through one center before reaching the
+image plane. It replaces complicated optics with useful projection geometry.
+
+### RGGB — Red, Green, Green, Blue
+
+A common 2×2 Bayer filter arrangement with two green samples, one red, and one
+blue.
+
+### Rolling shutter
+
+A capture method that exposes different image rows at slightly different
+times. Motion can therefore make rigid objects lean, bend, or wobble.
+
+### White balance
+
+Scaling color channels so neutral surfaces remain neutral under different
+illumination. Automatic white balance can move colors across fixed thresholds.
+
+## Classical CV: geometry and calibration
+
+Representative source: [Notebook 03 — coordinates and calibration](notebooks/classical_cv/03_coordinates_and_calibration.ipynb).
+
+### Calibration
+
+Estimating camera parameters from observations of known geometry. Multiple
+varied views help distinguish the true model from several convincing lies.
+
+### Extrinsics
+
+The rotation and translation describing a camera's pose relative to a world or
+another reference frame. They answer where the camera is and which way it looks.
+
+### Homogeneous coordinates
+
+A representation adding an extra coordinate so translation and other geometric
+operations can share matrix multiplication. Scaling every coordinate equally
+does not change the represented point.
+
+### Intrinsics
+
+Parameters internal to the camera projection model, commonly focal lengths,
+principal point, and skew. They are collected in the intrinsic matrix `K`.
+
+### Principal point
+
+The image location where the camera's optical axis meets the image plane,
+usually near—but not guaranteed to equal—the image center.
+
+### Radial distortion
+
+Lens distortion that bends points inward or outward mainly according to their
+distance from the distortion center.
+
+### Reprojection error
+
+The pixel distance between an observed image point and where the estimated
+camera model predicts that known point should appear.
+
+### Tangential distortion
+
+Asymmetric distortion caused when the lens and sensor are not perfectly
+aligned or parallel.
+
+## Classical CV: stereo, depth, and local features
+
+Representative source: [Notebook 04 — stereo depth and point clouds](notebooks/classical_cv/04_stereo_depth_and_point_clouds.ipynb).
+
+### Baseline
+
+The physical distance between two stereo camera centers. A larger baseline
+increases disparity sensitivity but also increases viewpoint differences and
+occlusion.
+
+### Block matching
+
+Stereo correspondence by comparing a small patch in one image with candidate
+patches along the matching scanline in the other image.
+
+### BRIEF — Binary Robust Independent Elementary Features
+
+A compact binary descriptor formed from intensity comparisons around a
+keypoint. ORB uses a rotation-aware version of BRIEF.
+
+### Depth map
+
+An image whose values represent distance from the camera rather than color or
+brightness.
+
+### Descriptor
+
+A numerical fingerprint of the pixels around a keypoint. Descriptors allow
+similar local regions to be compared across images.
+
+### Disparity
+
+The horizontal position difference of the same scene point in a rectified
+stereo pair. Larger disparity normally means smaller depth.
+
+### FAST — Features from Accelerated Segment Test
+
+A fast corner detector that examines a ring of pixels around a candidate point.
+ORB uses FAST to find memorable locations.
+
+### IR — Infrared
+
+Light with wavelengths beyond visible red. Active stereo systems may project an
+IR dot pattern so otherwise plain surfaces gain matchable visual texture.
+
+### Keypoint
+
+A distinctive image location such as a corner or unusual local pattern. It says
+where something memorable is; the descriptor says what its neighborhood looks
+like.
+
+### ORB — Oriented FAST and Rotated BRIEF
+
+A fast feature system combining FAST keypoint detection with a rotation-aware
+binary BRIEF descriptor.
+
+### Point cloud
+
+A collection of 3D sample points representing measured surfaces. It is not a
+solid object, even when the plot looks impressively object-shaped.
+
+### Rectification
+
+Transforming a stereo pair so corresponding points lie on the same image row.
+This reduces correspondence from a 2D search to a mostly horizontal one.
+
+### SAD — Sum of Absolute Differences
+
+A patch-matching cost obtained by adding absolute pixel differences. The lowest
+cost indicates the least bad candidate match; nobody needs to feel sad.
+
+### StereoBM — Stereo Block Matching
+
+OpenCV's classical dense stereo matcher based on block correspondence. It can
+reject ambiguous, textureless, or geometrically invalid matches.
+
+### StereoSGBM — Stereo Semi-Global Block Matching
+
+An OpenCV stereo matcher that combines local matching evidence with smoothness
+constraints along multiple directions, often producing denser results than
+StereoBM at greater computational cost.
+
+### Texture
+
+Visible local variation such as edges, dots, grain, or brightness patterns.
+Stereo matching needs texture so patches have distinctive visual addresses.
+
+## Classical CV: filtering, edges, and robust models
+
+Representative source: [Notebook 05 — edges, Hough, and RANSAC](notebooks/classical_cv/05_edges_hough_and_ransac.ipynb).
+
+### Bounding box
+
+A rectangle describing an object's image extent. It is a compact location
+summary, not a claim that the object itself is rectangular.
+
+### Canny edge detector
+
+A multi-stage method that smooths an image, measures gradients, thins candidate
+edges, and links weak edges to strong ones using two thresholds.
+
+### Convolution
+
+Sliding a kernel across data and computing a weighted local combination at each
+position. Many libraries technically implement cross-correlation while keeping
+the friendlier convolution name.
+
+### Gaussian filter
+
+A smoothing filter that gives nearby pixels more influence than distant ones
+according to a Gaussian-shaped set of weights.
+
+### Hough transform
+
+A method in which image evidence votes in a parameter space. Peaks represent
+models—such as lines—supported by many pixels.
+
+### Inlier
+
+A measurement close enough to a proposed model under a chosen tolerance. The
+definition depends on the model and residual threshold, not moral character.
+
+### Least squares
+
+Model fitting that minimizes the sum of squared residuals. It works well with
+mostly honest noise but gives distant outliers enormous influence.
+
+### RANSAC — Random Sample Consensus
+
+Repeatedly proposes a model from a minimal random sample and keeps the model
+supported by the largest inlier group.
+
+### Residual
+
+The difference between an observation and the value predicted by a model. Its
+exact form may be vertical error, Euclidean distance, reprojection error, or
+another task-specific disagreement.
+
+### Sobel filter
+
+A small derivative filter used to estimate horizontal or vertical image
+intensity change and therefore highlight edges.
 
 ## General ML, computing, and tensor notation
 
