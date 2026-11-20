@@ -5,6 +5,9 @@ One day, this repository will solve the universe; in the worst-case scenario —
 An open-ended playground for computer vision, machine learning, and experiments
 that look educational, interesting, or sufficiently suspicious.
 
+Frequently encountered terminology and threatening collections of capital
+letters live in the project-wide [glossary](GLOSSARY.md).
+
 ## Repository structure
 
 ```text
