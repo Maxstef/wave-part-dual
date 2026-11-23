@@ -31,6 +31,12 @@ Early notebooks should use controlled synthetic sequences where true motion is
 known, then introduce real video as soon as the algorithms have exhausted their
 easy excuses.
 
+## Notebooks
+
+1. [`01_motion_and_background_subtraction.ipynb`](./01_motion_and_background_subtraction.ipynb)
+   — frame differencing, foreground masks, background learning, MOG2, its
+   favorite failure modes, and a small real-video experiment.
+
 ## Project organization
 
 - Notebook-specific scene generation and plotting belong in `_helpers/`.

@@ -91,7 +91,7 @@ marked explicitly because the letters were apparently running out.
 [MFU](#mfu--model-flops-utilization), [MHA](#mha--multi-head-attention),
 [ML](#ml--machine-learning), [MLE](#mle--maximum-likelihood-estimation),
 [MLP](#mlp--multilayer-perceptron), [MoCo](#moco--momentum-contrast),
-[Morphology](#morphology),
+[MOG/MOG2](#mogmog2--mixture-of-gaussians), [Morphology](#morphology),
 [MPC](#mpc--model-predictive-control), [MSE](#mse--mean-squared-error)
 
 **N:** [NCHW](#nchw--batch-channel-height-width),
@@ -475,6 +475,18 @@ another task-specific disagreement.
 
 A small derivative filter used to estimate horizontal or vertical image
 intensity change and therefore highlight edges.
+
+## Object tracking and motion
+
+Representative source: [Notebook 01 — motion and background subtraction](notebooks/object_tracking/01_motion_and_background_subtraction.ipynb).
+
+### MOG/MOG2 — Mixture of Gaussians
+
+A statistical background model that lets each pixel have several normal
+appearances, such as moving leaves or changing light, instead of remembering
+only one average value. OpenCV's MOG2 implementation updates those appearances
+over time and labels sufficiently unusual pixels as foreground. The `2` names
+the improved algorithm variant, not two especially cooperative Gaussians.
 
 ## General ML, computing, and tensor notation
 
