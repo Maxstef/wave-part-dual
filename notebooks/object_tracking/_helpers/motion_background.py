@@ -9,6 +9,12 @@ import numpy as np
 from matplotlib.patches import Rectangle
 from numpy.typing import NDArray
 
+from wave_part_dual.tracking import (
+    foreground_boxes,
+    motion_mask,
+    running_background_masks,
+)
+
 
 OPENCV_VTEST_URL = (
     "https://raw.githubusercontent.com/opencv/opencv/master/samples/data/vtest.avi"
@@ -79,37 +85,6 @@ def make_robot_sequence(
         masks.append(mask)
 
     return frames, masks, centers
-
-
-def motion_mask(
-    previous: NDArray[np.uint8],
-    current: NDArray[np.uint8],
-    threshold: int = 25,
-    kernel_size: int = 5,
-) -> tuple[NDArray[np.uint8], NDArray[np.uint8], NDArray[np.uint8]]:
-    """Compute absolute frame difference, a threshold mask, and its cleanup."""
-    difference = cv2.absdiff(current, previous)
-    gray_difference = cv2.cvtColor(difference, cv2.COLOR_RGB2GRAY)
-    _, raw_mask = cv2.threshold(gray_difference, threshold, 255, cv2.THRESH_BINARY)
-    kernel = cv2.getStructuringElement(
-        cv2.MORPH_ELLIPSE, (kernel_size, kernel_size)
-    )
-    clean_mask = cv2.morphologyEx(raw_mask, cv2.MORPH_OPEN, kernel)
-    clean_mask = cv2.morphologyEx(clean_mask, cv2.MORPH_CLOSE, kernel)
-    return gray_difference, raw_mask, clean_mask
-
-
-def foreground_boxes(
-    mask: NDArray[np.uint8], minimum_area: int = 80
-) -> list[tuple[int, int, int, int]]:
-    """Return bounding boxes for sufficiently large connected foreground regions."""
-    count, _, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
-    boxes = []
-    for label in range(1, count):
-        x, y, width, height, area = stats[label]
-        if area >= minimum_area:
-            boxes.append((int(x), int(y), int(width), int(height)))
-    return boxes
 
 
 def plot_sequence_strip(frames, frame_indices=(0, 4, 7, 9, 12, 16)):
@@ -235,21 +210,6 @@ def plot_motion_failures(frames, threshold=25, illumination_threshold=5):
         ax.axis("off")
     plt.tight_layout()
     plt.show()
-
-
-def running_background_masks(frames, alpha=0.08, threshold=28):
-    """Estimate a running-average background and foreground masks."""
-    background = frames[0].astype(np.float32)
-    backgrounds = [frames[0].copy()]
-    masks = [np.zeros(frames[0].shape[:2], dtype=np.uint8)]
-    for frame in frames[1:]:
-        difference = cv2.absdiff(frame, cv2.convertScaleAbs(background))
-        gray = cv2.cvtColor(difference, cv2.COLOR_RGB2GRAY)
-        _, mask = cv2.threshold(gray, threshold, 255, cv2.THRESH_BINARY)
-        masks.append(mask)
-        cv2.accumulateWeighted(frame, background, alpha)
-        backgrounds.append(cv2.convertScaleAbs(background))
-    return backgrounds, masks
 
 
 def plot_background_learning(frames, alphas=(0.03, 0.25), frame_indices=(6, 10, 16)):
