@@ -13,7 +13,8 @@ marked explicitly because the letters were apparently running out.
 
 **A:** [AE](#ae--autoencoder), [AI](#ai--artificial-intelligence),
 [AP](#ap--average-precision), [API](#api--application-programming-interface),
-[AR](#ar--autoregressive), [ARO](#aro--attribution-relation-and-order)
+[Aperture problem](#aperture-problem), [AR](#ar--autoregressive),
+[ARO](#aro--attribution-relation-and-order)
 
 **B:** [Baseline](#baseline), [Bayer pattern](#bayer-pattern),
 [BC](#bc--behavioral-cloning), [BCE](#bce--binary-cross-entropy),
@@ -58,6 +59,7 @@ marked explicitly because the letters were apparently running out.
 [FOV](#field-of-view-fov),
 [FP](#fp--false-positive), [FP32](#fp32--32-bit-floating-point),
 [FPN](#fpn--feature-pyramid-network), [FPS](#fps--frames-per-second),
+[Forward–backward check](#forwardbackward-check),
 [FSDP](#fsdp--fully-sharded-data-parallel)
 
 **G:** [Gain](#gain), [GAN](#gan--generative-adversarial-network),
@@ -71,7 +73,7 @@ marked explicitly because the letters were apparently running out.
 [Hough transform](#hough-transform), [HSDP](#hsdp--hybrid-sharded-data-parallel),
 [HSV](#hsv--hue-saturation-value)
 
-**I:** [I3D](#i3d--inflated-3d-convnet),
+**I:** [I3D](#i3d--inflated-3d-convnet), [Image pyramid](#image-pyramid),
 [InfoNCE](#infonce--information-noise-contrastive-estimation),
 [Inlier](#inlier), [Intrinsics](#intrinsics), [IoU](#iou--intersection-over-union),
 [IR](#ir--infrared), [IRL](#irl--inverse-reinforcement-learning)
@@ -82,7 +84,8 @@ marked explicitly because the letters were apparently running out.
 **L:** [L1](#l1--l1-norm-or-regularization),
 [L2](#l2--l2-norm-or-regularization),
 [Least squares](#least-squares),
-[LLaVA](#llava--large-language-and-vision-assistant), [LM](#lm--language-model),
+[LK](#lucaskanade-lk), [LLaVA](#llava--large-language-and-vision-assistant),
+[LM](#lm--language-model),
 [LSTM](#lstm--long-short-term-memory)
 
 **M:** [MAE](#mae--masked-autoencoder-or-mean-absolute-error),
@@ -92,13 +95,14 @@ marked explicitly because the letters were apparently running out.
 [ML](#ml--machine-learning), [MLE](#mle--maximum-likelihood-estimation),
 [MLP](#mlp--multilayer-perceptron), [MoCo](#moco--momentum-contrast),
 [MOG/MOG2](#mogmog2--mixture-of-gaussians), [Morphology](#morphology),
-[MPC](#mpc--model-predictive-control), [MSE](#mse--mean-squared-error)
+[Motion vector](#motion-vector), [MPC](#mpc--model-predictive-control),
+[MSE](#mse--mean-squared-error)
 
 **N:** [NCHW](#nchw--batch-channel-height-width),
 [NeRF](#nerf--neural-radiance-field), [NHWC](#nhwc--batch-height-width-channel),
 [NLL](#nll--negative-log-likelihood), [NMS](#nms--non-maximum-suppression)
 
-**O:** [Opening](#opening),
+**O:** [Opening](#opening), [Optical flow](#optical-flow),
 [ORB](#orb--oriented-fast-and-rotated-brief)
 
 **P:** [PAD](#pad--padding-token), [PE](#pe--positional-encoding),
@@ -124,6 +128,7 @@ marked explicitly because the letters were apparently running out.
 **S:** [SAD](#sad--sum-of-absolute-differences),
 [SAM](#sam--segment-anything-model), [Saturation](#saturation),
 [SDF](#sdf--signed-distance-function), [SGD](#sgd--stochastic-gradient-descent),
+[Shi–Tomasi](#shitomasi),
 [SiLU](#silu--sigmoid-linear-unit),
 [SimCLR](#simclr--simple-framework-for-contrastive-learning-of-visual-representations),
 [Sobel](#sobel-filter),
@@ -478,7 +483,8 @@ intensity change and therefore highlight edges.
 
 ## Object tracking and motion
 
-Representative source: [Notebook 01 — motion and background subtraction](notebooks/object_tracking/01_motion_and_background_subtraction.ipynb).
+Representative sources: [Notebook 01 — motion and background subtraction](notebooks/object_tracking/01_motion_and_background_subtraction.ipynb)
+and [Notebook 02 — optical flow and point tracking](notebooks/object_tracking/02_optical_flow_and_point_tracking.ipynb).
 
 ### MOG/MOG2 — Mixture of Gaussians
 
@@ -487,6 +493,47 @@ appearances, such as moving leaves or changing light, instead of remembering
 only one average value. OpenCV's MOG2 implementation updates those appearances
 over time and labels sufficiently unusual pixels as foreground. The `2` names
 the improved algorithm variant, not two especially cooperative Gaussians.
+
+### Aperture problem
+
+The ambiguity of estimating motion from a small view of a straight edge. Motion
+across the edge is visible, but motion along it can look unchanged; corners are
+less evasive because they vary in two directions.
+
+### Forward–backward check
+
+Tracks a point into the next frame and then back again. A point that cannot
+return near its starting position is treated as unreliable, though a wrong
+match can occasionally be consistent enough to pass.
+
+### Image pyramid
+
+A stack of progressively smaller image versions. Optical flow can estimate a
+large movement at a coarse scale, where it looks smaller, then refine it at
+finer scales.
+
+### Lucas–Kanade (LK)
+
+A local optical-flow method that estimates how a small image patch moved
+between nearby frames, assuming roughly stable appearance and coherent motion
+inside the patch.
+
+### Motion vector
+
+A displacement such as `(dx, dy)` describing how an image point moved from one
+frame to another. It is image-plane motion, not automatically physical speed.
+
+### Optical flow
+
+The apparent motion of image pixels or selected points between frames. Sparse
+optical flow follows chosen features; dense optical flow estimates motion more
+broadly across the image.
+
+### Shi–Tomasi
+
+A corner-selection method used by OpenCV's `goodFeaturesToTrack`. It finds
+locally distinctive points that are generally more trackable than flat regions
+or lonely straight edges.
 
 ## General ML, computing, and tensor notation
 

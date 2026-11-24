@@ -36,6 +36,9 @@ easy excuses.
 1. [`01_motion_and_background_subtraction.ipynb`](./01_motion_and_background_subtraction.ipynb)
    — frame differencing, foreground masks, background learning, MOG2, its
    favorite failure modes, and a small real-video experiment.
+2. [`02_optical_flow_and_point_tracking.ipynb`](./02_optical_flow_and_point_tracking.ipynb)
+   — corner selection, Lucas–Kanade motion, pyramids, forward–backward checks,
+   lost points, robot occlusion, and real-video trajectories.
 
 ## Project organization
 
