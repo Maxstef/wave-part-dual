@@ -27,7 +27,7 @@ def plot_motion_vector_story(frames, centers, previous_index=11, current_index=1
     current_center = np.asarray(centers[current_index])
     displacement = current_center - previous_center
 
-    fig, axes = plt.subplots(1, 3, figsize=(10, 3.2))
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.8))
     axes[0].imshow(frames[previous_index])
     axes[0].scatter(*previous_center, color="#F04E45", s=45)
     axes[0].set_title(f"Frame {previous_index}: start")
@@ -187,7 +187,7 @@ def plot_known_robot_flow(
         np.asarray(centers[current_index]) - np.asarray(centers[previous_index])
     )
 
-    fig, axes = plt.subplots(1, 3, figsize=(10, 3.2))
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.8))
     axes[0].imshow(frames[previous_index])
     axes[0].scatter(good_start[:, 0], good_start[:, 1], s=22, color="#F04E45")
     axes[0].set_title(f"{len(good_start)} recognizable points")
@@ -326,7 +326,7 @@ def plot_robot_tracks(frames, robot_masks, start_index=11, end_index=17):
         active_ids = active_ids[valid]
         active_points = tracked[valid]
 
-    fig, axes = plt.subplots(1, 3, figsize=(10, 3.2))
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.8))
     for ax, index in zip(axes, (start_index, (start_index + end_index) // 2, end_index)):
         ax.imshow(frames[index])
         ax.set_title(f"Frame {index}")
@@ -389,7 +389,7 @@ def plot_real_video_tracks(
             snapshots[index] = (active_points.copy(), active_ids.copy())
 
     shown = (start_index, (start_index + end_index) // 2, end_index)
-    fig, axes = plt.subplots(1, 3, figsize=(11, 3.4))
+    fig, axes = plt.subplots(1, 3, figsize=(16.5, 5.1))
     for ax, index in zip(axes, shown):
         current_points, _ = snapshots[index]
         ax.imshow(frames[index])
