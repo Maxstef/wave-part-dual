@@ -92,7 +92,8 @@ marked explicitly because the letters were apparently running out.
 [mAP](#map--mean-average-precision), [Mask](#mask),
 [MDP](#mdp--markov-decision-process),
 [MFU](#mfu--model-flops-utilization), [MHA](#mha--multi-head-attention),
-[ML](#ml--machine-learning), [MLE](#mle--maximum-likelihood-estimation),
+[MIL](#mil--multiple-instance-learning), [ML](#ml--machine-learning),
+[MLE](#mle--maximum-likelihood-estimation),
 [MLP](#mlp--multilayer-perceptron), [MoCo](#moco--momentum-contrast),
 [MOG/MOG2](#mogmog2--mixture-of-gaussians), [Morphology](#morphology),
 [Motion vector](#motion-vector), [MPC](#mpc--model-predictive-control),
@@ -130,6 +131,7 @@ marked explicitly because the letters were apparently running out.
 [SDF](#sdf--signed-distance-function), [SGD](#sgd--stochastic-gradient-descent),
 [Shi–Tomasi](#shitomasi),
 [SiLU](#silu--sigmoid-linear-unit),
+[Single-object tracking](#single-object-tracking),
 [SimCLR](#simclr--simple-framework-for-contrastive-learning-of-visual-representations),
 [Sobel](#sobel-filter),
 [SQ](#sq--segmentation-quality),
@@ -139,7 +141,8 @@ marked explicitly because the letters were apparently running out.
 [StereoSGBM](#stereosgbm--stereo-semi-global-block-matching),
 [Structuring element](#structuring-element), [SVM](#svm--support-vector-machine)
 
-**T:** [Tangential distortion](#tangential-distortion), [Texture](#texture),
+**T:** [Tangential distortion](#tangential-distortion),
+[Template matching](#template-matching), [Texture](#texture),
 [Thresholding](#thresholding), [THW](#thw--time-height-width),
 [TP](#tp--true-positive-or-tensor-parallelism),
 [TPU](#tpu--tensor-processing-unit)
@@ -483,8 +486,9 @@ intensity change and therefore highlight edges.
 
 ## Object tracking and motion
 
-Representative sources: [Notebook 01 — motion and background subtraction](notebooks/object_tracking/01_motion_and_background_subtraction.ipynb)
-and [Notebook 02 — optical flow and point tracking](notebooks/object_tracking/02_optical_flow_and_point_tracking.ipynb).
+Representative sources: [Notebook 01 — motion and background subtraction](notebooks/object_tracking/01_motion_and_background_subtraction.ipynb),
+[Notebook 02 — optical flow and point tracking](notebooks/object_tracking/02_optical_flow_and_point_tracking.ipynb),
+and [Notebook 03 — single-object tracking](notebooks/object_tracking/03_single_object_tracking.ipynb).
 
 ### MOG/MOG2 — Mixture of Gaussians
 
@@ -534,6 +538,25 @@ broadly across the image.
 A corner-selection method used by OpenCV's `goodFeaturesToTrack`. It finds
 locally distinctive points that are generally more trackable than flat regions
 or lonely straight edges.
+
+### Template matching
+
+Slides a remembered image patch over a search image and scores how similar each
+candidate location looks. It is understandable and useful, but scale changes,
+occlusion, and convincing twins can make yesterday's photograph unreliable.
+
+### Single-object tracking
+
+Starts with one initialized target box and estimates the same target's box in
+later frames. Unlike ordinary detection, it receives an identity decision at
+the beginning and then inherits responsibility for not quietly changing it.
+
+### MIL — Multiple Instance Learning
+
+A learning setup where labels apply to groups of examples rather than every
+individual example. OpenCV's MIL tracker uses this idea to update an appearance
+model from candidate patches around the tracked target; the full machinery may
+remain peacefully inside OpenCV for now.
 
 ## General ML, computing, and tensor notation
 

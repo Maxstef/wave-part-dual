@@ -39,6 +39,9 @@ easy excuses.
 2. [`02_optical_flow_and_point_tracking.ipynb`](./02_optical_flow_and_point_tracking.ipynb)
    — corner selection, Lucas–Kanade motion, pyramids, forward–backward checks,
    lost points, robot occlusion, and real-video trajectories.
+3. [`03_single_object_tracking.ipynb`](./03_single_object_tracking.ipynb)
+   — initialized boxes, template correlation, local versus global search,
+   scale changes, occlusion, look-alikes, confidence, and real MIL tracking.
 
 ## Project organization
 
