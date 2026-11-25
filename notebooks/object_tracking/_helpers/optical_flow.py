@@ -300,6 +300,48 @@ def plot_pyramid_experiment(
     return results
 
 
+def plot_pyramid_levels(
+    frames,
+    centers,
+    previous_index=11,
+    current_index=14,
+    maximum_level=3,
+):
+    """Show the same motion at every image-pyramid resolution."""
+    previous_levels = [frames[previous_index]]
+    current_levels = [frames[current_index]]
+    for _ in range(maximum_level):
+        previous_levels.append(cv2.pyrDown(previous_levels[-1]))
+        current_levels.append(cv2.pyrDown(current_levels[-1]))
+
+    fig, axes = plt.subplots(1, maximum_level + 1, figsize=(15, 3.8))
+    start = np.asarray(centers[previous_index], dtype=float)
+    end = np.asarray(centers[current_index], dtype=float)
+    for level, (ax, image) in enumerate(zip(axes, current_levels)):
+        divisor = 2**level
+        level_start = start / divisor
+        level_end = end / divisor
+        displacement = level_end - level_start
+        ax.imshow(image, interpolation="nearest")
+        ax.annotate(
+            "",
+            xy=level_end,
+            xytext=level_start,
+            arrowprops={"arrowstyle": "->", "color": "#FFE066", "lw": 2.5},
+        )
+        ax.scatter(*level_start, color="#F04E45", s=28, label="start")
+        ax.scatter(*level_end, color="#2E8B57", s=28, label="end")
+        ax.set_title(
+            f"Level {level}: {image.shape[1]}×{image.shape[0]}\n"
+            f"movement ≈ {displacement[0]:g} px"
+        )
+        ax.axis("off")
+    axes[0].legend(fontsize=8)
+    fig.suptitle("The same robot journey becomes fewer pixels at each level")
+    plt.tight_layout()
+    plt.show()
+
+
 def plot_robot_tracks(frames, robot_masks, start_index=11, end_index=17):
     """Track initial robot points through several frames and show their histories."""
     points = detect_corners(
