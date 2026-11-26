@@ -98,7 +98,7 @@ def _crop(image, box):
     return image[y : y + height, x : x + width]
 
 
-def _draw_box(ax, box, color, label, linewidth=2):
+def _draw_box(ax, box, color, label, linewidth=2, text_color="white"):
     x, y, width, height = box
     ax.add_patch(
         Rectangle((x, y), width, height, fill=False, edgecolor=color, linewidth=linewidth)
@@ -107,7 +107,7 @@ def _draw_box(ax, box, color, label, linewidth=2):
         x,
         max(8, y - 4),
         label,
-        color=color,
+        color=text_color,
         fontsize=8,
         bbox={"facecolor": "black", "alpha": 0.45, "pad": 1, "edgecolor": "none"},
     )
@@ -118,7 +118,13 @@ def plot_tracking_contract(frames, true_boxes, indices=(0, 7, 15, 22)):
     fig, axes = plt.subplots(1, len(indices), figsize=(14, 3.4))
     for ax, index in zip(axes, indices):
         ax.imshow(frames[index])
-        _draw_box(ax, true_boxes[index], "#2E8B57", "true robot")
+        _draw_box(
+            ax,
+            true_boxes[index],
+            "#2E8B57",
+            "true robot",
+            text_color="white",
+        )
         ax.set_title("Initialization" if index == indices[0] else f"Frame {index}")
         ax.axis("off")
     fig.suptitle("One identity, one box, increasingly unreasonable circumstances")
@@ -140,7 +146,13 @@ def plot_template_match_pair(frames, true_boxes, template_index=0, target_index=
     axes[1].scatter(match.box[0], match.box[1], color="#72E5F2", s=35)
     axes[1].set_title("Correlation map\nbright = looks more like the template")
     axes[2].imshow(frames[target_index])
-    _draw_box(axes[2], true_boxes[target_index], "#2E8B57", "truth")
+    _draw_box(
+        axes[2],
+        true_boxes[target_index],
+        "#2E8B57",
+        "truth",
+        text_color="white",
+    )
     _draw_box(axes[2], match.box, "#F04E45", f"match {match.score:.2f}")
     axes[2].set_title(f"Frame {target_index}: best fixed-size match")
     for ax in axes:
@@ -188,7 +200,13 @@ def plot_search_strategies(
         for column, index in enumerate(frame_indices):
             ax = axes[row, column]
             ax.imshow(frames[index])
-            _draw_box(ax, true_boxes[index], "#2E8B57", "truth")
+            _draw_box(
+                ax,
+                true_boxes[index],
+                "#2E8B57",
+                "truth",
+                text_color="white",
+            )
             _draw_box(ax, boxes[index], "#F04E45", name)
             ax.set_title(f"Frame {index} · IoU={box_iou(boxes[index], true_boxes[index]):.2f}")
             ax.axis("off")
@@ -242,7 +260,13 @@ def plot_scale_comparison(
             column = position % columns
             ax = axes[row, column]
             ax.imshow(frames[index])
-            _draw_box(ax, true_boxes[index], "#2E8B57", "truth")
+            _draw_box(
+                ax,
+                true_boxes[index],
+                "#2E8B57",
+                "truth",
+                text_color="white",
+            )
             _draw_box(ax, boxes[index], "#F04E45", name)
             ax.set_title(
                 f"{name} · frame {index}\n"
