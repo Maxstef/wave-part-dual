@@ -32,7 +32,7 @@ marked explicitly because the letters were apparently running out.
 [CNN](#cnn--convolutional-neural-network), [CoCa](#coca--contrastive-captioner),
 [COCO](#coco--common-objects-in-context),
 [Connected component](#connected-component),
-[Convolution](#convolution),
+[Convolution](#convolution), [Covariance](#covariance),
 [CPC](#cpc--contrastive-predictive-coding), [CPU](#cpu--central-processing-unit),
 [CREPE](#crepe--compositionality-evaluation-benchmark),
 [CUDA](#cuda--compute-unified-device-architecture),
@@ -78,7 +78,7 @@ marked explicitly because the letters were apparently running out.
 [Inlier](#inlier), [Intrinsics](#intrinsics), [IoU](#iou--intersection-over-union),
 [IR](#ir--infrared), [IRL](#irl--inverse-reinforcement-learning)
 
-**K:** [Kernel](#kernel), [Keypoint](#keypoint),
+**K:** [Kalman filter / KF](#kalman-filter-kf), [Kernel](#kernel), [Keypoint](#keypoint),
 [KL](#kl--kullbackleibler-divergence)
 
 **L:** [L1](#l1--l1-norm-or-regularization),
@@ -488,7 +488,20 @@ intensity change and therefore highlight edges.
 
 Representative sources: [Notebook 01 — motion and background subtraction](notebooks/object_tracking/01_motion_and_background_subtraction.ipynb),
 [Notebook 02 — optical flow and point tracking](notebooks/object_tracking/02_optical_flow_and_point_tracking.ipynb),
-and [Notebook 03 — single-object tracking](notebooks/object_tracking/03_single_object_tracking.ipynb).
+[Notebook 03 — single-object tracking](notebooks/object_tracking/03_single_object_tracking.ipynb),
+and [Notebook 04 — Kalman filtering and motion prediction](notebooks/object_tracking/04_kalman_filter_and_motion_prediction.ipynb).
+
+### Kalman filter (KF)
+
+A state-estimation method that combines a motion prediction with noisy
+measurements. In tracking it can smooth detections, predict short gaps, and
+report growing uncertainty while the object is not observed.
+
+### Covariance
+
+A matrix describing how uncertain several values are and how their errors move
+together. A Kalman filter uses it to decide how much to trust prediction versus
+new evidence; it is the filter's numerical version of *how sure am I?*
 
 ### MOG/MOG2 — Mixture of Gaussians
 

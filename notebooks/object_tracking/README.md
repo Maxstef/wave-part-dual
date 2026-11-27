@@ -42,6 +42,9 @@ easy excuses.
 3. [`03_single_object_tracking.ipynb`](./03_single_object_tracking.ipynb)
    — initialized boxes, template correlation, local versus global search,
    scale changes, occlusion, look-alikes, confidence, and real MIL tracking.
+4. [`04_kalman_filter_and_motion_prediction.ipynb`](./04_kalman_filter_and_motion_prediction.ipynb)
+   — noisy and missing measurements, constant-velocity prediction, correction,
+   uncertainty, trust parameters, and the consequences of a robot changing its mind.
 
 ## Project organization
 
